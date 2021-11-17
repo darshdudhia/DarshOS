@@ -32,7 +32,7 @@ extern "C" void _start(void){
     enable_cursor(11, 13);
     PrintString("Welcome to DarshOS\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
     PrintString("Made by Darsh Dudhia\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
-    PrintString("Shell Version: 1.6\n\rFeatures:\n\rBasic Shell with a few commands.\n\rType \"help\" without the double quotation marks for more info.\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
+    PrintString("Shell Version: 1.7\n\rFeatures:\n\rBasic Shell with a few commands.\n\rType \"help\" without the double quotation marks for more info.\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
     PrintString("\n\n\r");
     sleep(500);
     getChar();
