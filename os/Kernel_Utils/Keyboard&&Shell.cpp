@@ -98,7 +98,7 @@ char getChar(void){
                         if (tempvar == i){
                             sleep(200);
                             PrintString("user@DarshOS has Gained Admin Privilages\n\r");
-                            PrintString("Note: This Command Does Not Do anything right now.")
+                            PrintString("Note: This Command Does Not Do anything right now.");
                         }
                         tempvar++;
                         }
@@ -111,7 +111,7 @@ char getChar(void){
                             PrintString("help - Shows this message\n\r");
                             PrintString("reboot - Restarts/Reboots The System\n\r");
                             PrintString("urandom - Prints a random number from 1-10 using a pseudo random number genrator");
-                            PrintString("cls - Clears the Screen")
+                            PrintString("cls - Clears the Screen");
                         }
                         tempvar++;
                     }
