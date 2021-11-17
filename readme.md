@@ -1,10 +1,5 @@
 
 # DarshOS
-
-A small OS written in my spare time. 
-
-
-
 ## Features
 
 - Shell/Command Line 
