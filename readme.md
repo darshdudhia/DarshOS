@@ -132,4 +132,3 @@ echo DONE
  - [Daedalus Community - OS dev Series](https://www.youtube.com/watch?v=MwPjvJ9ulSc&list=PLm3B56ql_akNcvH8vvJRYOc7TbYhRs19M)
  - [Poncho - OS dev series (Season 1)](https://www.youtube.com/watch?v=7LTB4aLI7r0&list=PLxN4E629pPnKKqYsNVXpmCza8l0Jb6l8-)
   - [Poncho - OS dev series (Season 2)](https://www.youtube.com/watch?v=mpPbKEeWIHU&list=PLxN4E629pPnJxCQCLy7E0SQY_zuumOVyZ)
-
