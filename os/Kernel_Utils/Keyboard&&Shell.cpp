@@ -31,7 +31,7 @@ char input[1000];
 int i = 0;
 int tempvar = 0;
 char getChar(void){
-    PrintString("user@darsh:~$");
+    PrintString("user@darshOS:~$ ");
     int running = 1;
     char out = 0;
     while(running = 1) {
@@ -49,7 +49,7 @@ char getChar(void){
                     if (input[tempvar] != command_help[tempvar]){
                         tempvar = 0;
                         while (tempvar != i+1) {
-                        if (input[tempvar] != command_exit[tempvar]){
+                        if (input[tempvar] != command_Admin[tempvar]){
                             tempvar = 0;
                             while (tempvar != i+1) {
                                 if (input[tempvar] != command_reboot[tempvar]){
@@ -97,9 +97,8 @@ char getChar(void){
                         else{
                         if (tempvar == i){
                             sleep(200);
-                            PrintString("System@darshOS has halted the system.");
-                            asm("cli");
-                            asm("hlt");
+                            PrintString("user@DarshOS has Gained Admin Privilages\n\r");
+                            PrintString("Note: This Command Does Not Do anything right now.")
                         }
                         tempvar++;
                         }
@@ -110,8 +109,9 @@ char getChar(void){
                         if (tempvar == i){
                             sleep(200);
                             PrintString("help - Shows this message\n\r");
-                            PrintString("halt - Halts the system\n\r");
-                            PrintString("reboot - Restarts/Reboots The System");
+                            PrintString("reboot - Restarts/Reboots The System\n\r");
+                            PrintString("urandom - Prints a random number from 1-10 using a pseudo random number genrator");
+                            PrintString("cls - Clears the Screen")
                         }
                         tempvar++;
                     }
