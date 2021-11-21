@@ -5,33 +5,13 @@
 #include "interrupts/exceptions.h"
 #include "interrupts/syscalls.h"
 #include "interrupts/pic.h"
-#include "Kernel_Utils/mouse.cpp"
+
+extern "C" void isr1(void);
 
 extern "C" void _start(void){
     ClearScreen(BACKGROUND_BLUE | FOREGROUND_WHITE);
     SetCursorPos(996);
     PrintString("DarshOS\n\n\r                                       ");
-    disable_cursor();
-    int repeat_load_animation = 2;
-    int num0 = 0;
-    while (num0 != repeat_load_animation) {
-    PrintString("-");
-    SetCursorPos(CursorPosition - 1);
-    sleep(150);
-    PrintString("\\");
-    SetCursorPos(CursorPosition - 1);
-    sleep(150);
-    PrintString("|");
-    SetCursorPos(CursorPosition - 1);
-    sleep(150);
-    PrintString("/");
-    SetCursorPos(CursorPosition - 1);
-    sleep(150);
-    PrintString("-");
-    SetCursorPos(CursorPosition - 1);
-    sleep(150);
-    num0++;
-    }
     ClearScreen(BACKGROUND_BLUE | FOREGROUND_WHITE);
     //set up IDT
     init_idt_32();
@@ -43,10 +23,10 @@ extern "C" void _start(void){
     disable_pic();
     remap_pic();
     //keyboard
-    set_idt_descriptor_32(0x21, (void*)Shell, INT_FLAGS);
+    set_idt_descriptor_32(0x21, (void*)isr1, INT_FLAGS);
     clear_irq_mask(1);
-    //start reciving interrupts
     __asm__ __volatile__("sti");
+
     /*
     beep(261.63);
     beep(293.66);
@@ -56,7 +36,7 @@ extern "C" void _start(void){
     enable_cursor(11, 13);
     PrintString("Welcome to DarshOS\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
     PrintString("Made by Darsh Dudhia\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
-    PrintString("Shell Version: 1.8 DEV BUILD\n\rFeatures:\n\rBasic Shell with a few commands.\n\rType \"help\" without the double quotation marks for more info.\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
+    PrintString("Shell CodeName: Clam \n\rShell Version: 1.8\n\rFeatures:\n\rBasic Shell with a few commands.\n\rType \"help\" without the double quotation marks for more info.\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
     PrintString("\n\n\r");
     INIT();
     sleep(500);
