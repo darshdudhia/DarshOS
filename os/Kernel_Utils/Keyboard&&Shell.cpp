@@ -4,6 +4,7 @@
 #include "shell.h"
 #include "timer.cpp"
 #include "urandom.cpp"
+#include "sound.h"
 
 const char ASCIITable[] = {
      0 ,  0 , '1', '2',
@@ -13,10 +14,10 @@ const char ASCIITable[] = {
     'q', 'w', 'e', 'r',
     't', 'y', 'u', 'i',
     'o', 'p', '[', ']',
-    '~' ,  0 , 'a', 's',
+     0  ,  0 , 'a', 's',
     'd', 'f', 'g', 'h',
     'j', 'k', 'l', ';',
-    '\'','`',  0 , '\\',
+    '\'', 0 ,  0 , '\\',
     'z', 'x', 'c', 'v',
     'b', 'n', 'm', ',',
     '.', '/',  0 , '*',
@@ -30,17 +31,18 @@ char Translate(uint_8 scancode){
 char input[1000];
 int i = 0;
 int tempvar = 0;
-char getChar(void){
-    PrintString("user@darshOS:~$ ");
-    int running = 1;
+extern "C" void keyboard(void){
+    outb(0x20,0x20);
+    outb(0xa0,0x20);
+    int enter = 0;
     char out = 0;
-    while(running = 1) {
-        if(inb(0x64)&1) {
-            out = inb(0x60);
-            char test = out;
-            char ascii = Translate(test);
-            if (ascii != 0){
-                if (ascii == '~'){
+        out = inb(0x60);
+        if (out == 28){
+            enter = 1;
+        }
+        char key = out;
+            char ascii = Translate(key);
+            if (enter == 1){
                     int before = CursorPosition / 80;
                     SetCursorPos(before * 80 + 80);
                     //SHELL
@@ -59,7 +61,7 @@ char getChar(void){
                                     tempvar = 0;
                                     while (tempvar != i+1) {
                                     if (input[tempvar] != command_cls[tempvar]){
-                                        sleep(200);
+                                    
                                         PrintString("Invalid Command");
                                         tempvar = i+1;
                                         break;
@@ -126,17 +128,17 @@ char getChar(void){
                     PrintString("user@darshOS:~$ ");
                     tempvar = 0;
                     i = 0;
-
+                    enter = 0;
                 }
                 else{
+                    if (ascii != 0){
                     PrintChar(ascii, BACKGROUND_BLUE | FOREGROUND_WHITE);
                     input[i] = {ascii};
                     i++;
+                    }
                 }
 }
-}
 
+void INIT(void){
+    PrintString("user@darshOS:~$ ");
 }
-return 0;
-}
-
