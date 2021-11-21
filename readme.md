@@ -6,11 +6,12 @@
 
 - Keyboard Input
 
+- IDT
 ## Might add in the future
  
  - File System and Commands for File  System
 
- - IDT
+ - IDT [DONE]
 
  - Networking
  
