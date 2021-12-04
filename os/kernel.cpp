@@ -36,7 +36,7 @@ extern "C" void _start(void){
     enable_cursor(11, 13);
     PrintString("Welcome to DarshOS\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
     PrintString("Made by Darsh Dudhia\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
-    PrintString("Shell CodeName: Clam \n\rShell Version: 1.8\n\rFeatures:\n\rBasic Shell with a few commands.\n\rType \"help\" without the double quotation marks for more info.\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
+    PrintString("Shell CodeName: Clam \n\rShell Version: 1.8\n\rFeatures:\n\rBasic Shell with a few commands.\n\rType \"help\" or \"?\" without the double quotation marks for more info.\n\r", BACKGROUND_BLUE | FOREGROUND_WHITE);
     PrintString("\n\n\r");
     INIT();
     sleep(500);
