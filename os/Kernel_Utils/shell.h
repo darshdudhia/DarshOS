@@ -5,3 +5,4 @@ char command_reboot[1000] = {'r', 'e', 'b', 'o', 'o', 't'};
 char command_random[1000] = {'u', 'r', 'a', 'n', 'd', 'o', 'm'};
 char command_cls[1000] = {'c', 'l', 's'};
 char command_Admin[1000] = {'i',  ' ', 'a', 'm', ' ', 'r', 'o', 'o', 't'};
+char command_helpq[1000] = {'?'};
