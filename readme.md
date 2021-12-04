@@ -11,8 +11,6 @@
  
  - File System and Commands for File  System
 
- - IDT [DONE]
-
  - Networking
  
  - GUI
@@ -51,6 +49,7 @@ For Windows you will have to Install WSL (Windows Subsystem for Linux) then you 
 - GCC cross compiler for i386 systems (might take quite some time).
 ```bash
 cd os
+sudo chmod +x cross_compilei32.sh
 sh cross_compilei32.sh
 ```
 ### Now you will have to do the following to run compile.sh :
@@ -65,6 +64,7 @@ sh cross_compilei32.sh
 ```
 - then to compile the compile.sh file run this command.
 ```bash
+ sudo chmod +x compile.sh
  sh compile.sh
 ```
 
