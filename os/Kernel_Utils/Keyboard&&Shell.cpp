@@ -50,7 +50,7 @@ extern "C" void keyboard(void){
                     if (input[tempvar] != command_help[tempvar]){
                         tempvar = 0;
                         while (tempvar != i+1) {
-                        if (input[tempvar] != command_Admin[tempvar]){
+                        if (input[tempvar] != command_que[tempvar]){
                             tempvar = 0;
                             while (tempvar != i+1) {
                                 if (input[tempvar] != command_reboot[tempvar]){
@@ -98,8 +98,10 @@ extern "C" void keyboard(void){
                         else{
                         if (tempvar == i){
                             sleep(200);
-                            PrintString("user@DarshOS has Gained Admin Privilages\n\r");
-                            PrintString("Note: This Command Does Not Do anything right now.");
+                            PrintString("help - Shows this message\n\r");
+                            PrintString("reboot - Restarts/Reboots The System\n\r");
+                            PrintString("urandom - Prints a random number from 1-10 using a pseudo random number genrator");
+                            PrintString("cls - Clears the Screen");
                         }
                         tempvar++;
                         }
