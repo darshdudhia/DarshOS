@@ -17,7 +17,7 @@
 
 
 ## Contribute
-Feel Free To Drop a Pull Request.
+- Feel Free To Drop a Pull Request.
 
 ## Setup / dependencies 
 You will need these to run "compile.sh".
