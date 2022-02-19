@@ -1,5 +1,11 @@
 
 # DarshOS
+
+# Deprecation Notice
+- This Os Is Now Newer Going To Be Updated Unless in The Future I make a new one
+- the reason for this is that i have made many errors which are far beyond repair.
+- and i cant progress devlopment beacuse i dont know understand ahci or c++ that much
+
 ## Features
 
 - Shell/Command Line 
